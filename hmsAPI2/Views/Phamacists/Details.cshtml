@@ -1,0 +1,54 @@
+﻿@model hmsAPI2.Models.Phamacist
+
+@{
+    ViewData["Title"] = "Details";
+}
+
+<h1>Details</h1>
+
+<div>
+    <h4>Phamacist</h4>
+    <hr />
+    <dl class="row">
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhamacistName)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhamacistName)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhamacistSurname)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhamacistSurname)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhamacistContact)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhamacistContact)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhamacistEmail)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhamacistEmail)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.PhamacistRegistrationNumber)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.PhamacistRegistrationNumber)
+        </dd>
+        <dt class = "col-sm-2">
+            @Html.DisplayNameFor(model => model.Phamacy)
+        </dt>
+        <dd class = "col-sm-10">
+            @Html.DisplayFor(model => model.Phamacy)
+        </dd>
+    </dl>
+</div>
+<div>
+    <a asp-action="Edit" asp-route-id="@Model.PhamacistNumber">Edit</a> |
+    <a asp-action="Index">Back to List</a>
+</div>

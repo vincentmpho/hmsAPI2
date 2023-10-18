@@ -1,0 +1,72 @@
+﻿@model IEnumerable<hmsAPI2.Models.MedicalHistory>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>My Health Record</h1>
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.NO)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MedicationName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepeatNo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RepeatLeft)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Quantity)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Intruction)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Status)
+            </th>
+            
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.NO)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.MedicationName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepeatNo)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RepeatLeft)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Quantity)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Intruction)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Status)
+            </td>
+            
+            <td>
+                 
+             
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

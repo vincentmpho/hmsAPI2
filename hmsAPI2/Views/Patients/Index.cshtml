@@ -1,0 +1,129 @@
+﻿@model IEnumerable<hmsAPI2.Models.Patient>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+
+     <form method="get" action="Index">
+         <p>
+             <input type="search" placeholder="Enter PtientID" value="@ViewData["GetPatientsdetails"]" name="Patientsearch" style="width:500px"/>
+             <input type="search" value="search" class="btn btn-primary"/>
+             <a asp-action="Index">Get All Patients</a>
+
+         </p>
+
+
+     </form>
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientID)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientAddress)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientDOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PatientGender)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Allegies)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.Chronic_code)
+            </th>
+
+            <th>
+                @Html.DisplayNameFor(model => model.DIAGNOSIS)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DATE_DIAGNOSED)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.MEDICATION_NAME)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientID)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientAddress)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientContact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientDOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PatientGender)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Allegies)
+            </td>
+
+            <td>
+                @Html.DisplayFor(modelItem => item.Chronic_code)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DIAGNOSIS)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DATE_DIAGNOSED)
+            </td>
+            
+             <td>
+                @Html.DisplayFor(modelItem => item.MEDICATION_NAME)
+            </td>
+
+            
+            
+            <td>
+                 
+                <a asp-action="Edit" asp-route-id="@item.PatientID">Edit</a> 
+                <a asp-action="Details" asp-route-id="@item.PatientID">Details</a> 
+                <a asp-action="Delete" asp-route-id="@item.PatientID">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

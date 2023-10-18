@@ -1,0 +1,78 @@
+﻿@model hmsAPI2.Models.Prescription
+
+@{
+    ViewData["Title"] = "Create";
+}
+
+<h1>Create</h1>
+
+<h4>Prescription</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Create">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <div class="form-group">
+                <label asp-for="PrescriptionDate" class="control-label"></label>
+                <input asp-for="PrescriptionDate" class="form-control" />
+                <span asp-validation-for="PrescriptionDate" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Medication" class="control-label"></label>
+                <input asp-for="Medication" class="form-control" />
+                <span asp-validation-for="Medication" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Quantity" class="control-label"></label>
+                <input asp-for="Quantity" class="form-control" />
+                <span asp-validation-for="Quantity" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Instructions" class="control-label"></label>
+                <input asp-for="Instructions" class="form-control" />
+                <span asp-validation-for="Instructions" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Repeats" class="control-label"></label>
+                <input asp-for="Repeats" class="form-control" />
+                <span asp-validation-for="Repeats" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="RepeatsLeft" class="control-label"></label>
+                <input asp-for="RepeatsLeft" class="form-control" />
+                <span asp-validation-for="RepeatsLeft" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Dispenser" class="control-label"></label>
+                <input asp-for="Dispenser" class="form-control" />
+                <span asp-validation-for="Dispenser" class="text-danger"></span>
+            </div>
+            <div class="form-group form-check">
+                <label class="form-check-label">
+                    <input class="form-check-input" asp-for="Filled" /> @Html.DisplayNameFor(model => model.Filled)
+                </label>
+            </div>
+            <div class="form-group">
+                <label asp-for="PatientID" class="control-label"></label>
+                <input asp-for="PatientID" class="form-control" />
+                <span asp-validation-for="PatientID" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="DoctorName" class="control-label"></label>
+                <input asp-for="DoctorName" class="form-control" />
+                <span asp-validation-for="DoctorName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Create" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}

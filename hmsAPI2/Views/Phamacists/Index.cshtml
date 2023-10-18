@@ -1,0 +1,65 @@
+﻿@model IEnumerable<hmsAPI2.Models.Phamacist>
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-action="Create">Create New</a>
+</p>
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.PhamacistName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhamacistSurname)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhamacistContact)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhamacistEmail)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.PhamacistRegistrationNumber)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Phamacy)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhamacistName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhamacistSurname)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhamacistContact)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhamacistEmail)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.PhamacistRegistrationNumber)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Phamacy)
+            </td>
+            <td>
+                <a asp-action="Edit" asp-route-id="@item.PhamacistNumber">Edit</a> |
+                <a asp-action="Details" asp-route-id="@item.PhamacistNumber">Details</a> |
+                <a asp-action="Delete" asp-route-id="@item.PhamacistNumber">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

@@ -1,0 +1,59 @@
+﻿@model hmsAPI2.Models.Phamacist
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>Edit</h1>
+
+<h4>Phamacist</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="PhamacistNumber" />
+            <div class="form-group">
+                <label asp-for="PhamacistName" class="control-label"></label>
+                <input asp-for="PhamacistName" class="form-control" />
+                <span asp-validation-for="PhamacistName" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhamacistSurname" class="control-label"></label>
+                <input asp-for="PhamacistSurname" class="form-control" />
+                <span asp-validation-for="PhamacistSurname" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhamacistContact" class="control-label"></label>
+                <input asp-for="PhamacistContact" class="form-control" />
+                <span asp-validation-for="PhamacistContact" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhamacistEmail" class="control-label"></label>
+                <input asp-for="PhamacistEmail" class="form-control" />
+                <span asp-validation-for="PhamacistEmail" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PhamacistRegistrationNumber" class="control-label"></label>
+                <input asp-for="PhamacistRegistrationNumber" class="form-control" />
+                <span asp-validation-for="PhamacistRegistrationNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Phamacy" class="control-label"></label>
+                <input asp-for="Phamacy" class="form-control" />
+                <span asp-validation-for="Phamacy" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-primary" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Index">Back to List</a>
+</div>
+
+@section Scripts {
+    @{await Html.RenderPartialAsync("_ValidationScriptsPartial");}
+}
